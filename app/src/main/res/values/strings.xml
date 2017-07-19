@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">BackButton</string>
+
+    //Descriptions(ImageView)
+    <string name="desc_back_button">Touch here to go back.</string>
+
+</resources>
