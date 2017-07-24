@@ -2,6 +2,7 @@ package devta.backbutton;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.ContextWrapper;
 import android.content.res.TypedArray;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
@@ -69,14 +70,29 @@ public class BackButton extends LinearLayout {
 
                 if(context instanceof TopBackButtonEventListener){
                     ((TopBackButtonEventListener) context).onTopBackButtonClicked();
-                }else {
-                    if(context instanceof Activity){
+                }
+                else if(context instanceof Activity){
                         Activity activity = (Activity)context;
                         activity.finish();
+                }
+                else {
+                    if(getActivity()!=null){
+                        getActivity().finish();
                     }
                 }
             }
         });
+    }
+
+    public Activity getActivity() {
+        Context context = getContext();
+        while (context instanceof ContextWrapper) {
+            if (context instanceof Activity) {
+                return (Activity)context;
+            }
+            context = ((ContextWrapper)context).getBaseContext();
+        }
+        return null;
     }
 
     public interface TopBackButtonEventListener{
