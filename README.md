@@ -75,6 +75,7 @@ Developed By
 --------
 
 Divyanshu Tayal
+
 <a href="https://www.linkedin.com/in/divyanshu-tayal-4a95b2aa/">
   <img alt="Follow me on LinkedIn"
        src="http://data.pkmmte.com/temp/social_linkedin_logo.png" />
